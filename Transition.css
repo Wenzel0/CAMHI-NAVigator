@@ -1,0 +1,36 @@
+/* ---------- Page Fade ---------- */
+
+body{
+    opacity:0;
+    animation:fadeIn .6s ease forwards;
+}
+
+body.fade-out{
+    animation:fadeOut .5s ease forwards;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+        opacity:1;
+        background:white;
+    }
+
+    to{
+        opacity:0;
+        background:white;
+    }
+
+}

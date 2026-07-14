@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CAMHI (Liboton) | CSNHS NAVigator</title>
+
+    <link rel="stylesheet" href="LibotonCampus.css">
+
+    <link rel="icon" type="image/png" href="../../Assets/Icons/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ===========================================
+                NAVIGATION
+=========================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+
+        <div class="logo-circle">
+            📍
+        </div>
+
+        <div class="title">
+
+            <h2>CAMHI <span>(Liboton)</span></h2>
+
+            <p>
+                Use your mouse wheel to zoom and drag the map to explore the campus.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button class="back-btn" id="backBtn">
+            ← Back
+        </button>
+
+        <div class="dropdown">
+
+            <button class="drop-btn">
+
+                Campus
+
+                <span class="arrow">▼</span>
+
+            </button>
+
+            <ul class="dropdown-menu">
+
+                <li>
+                    <a href="../MainCampus/MainCampus.html">
+                        CAMHI (Main)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        CAMHI (Liboton)
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ===========================================
+                MAP AREA
+=========================================== -->
+
+<main class="map-page">
+
+    <div class="map-viewer">
+
+        <div class="map-wrapper" id="mapWrapper">
+
+            <img
+                src="../../Assets/Images/liboton/Map.png"
+                id="campusMap"
+                alt="CAMHI Liboton Campus Map"
+            >
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="LibotonCampus.js"></script>
+
+</body>
+
+</html>

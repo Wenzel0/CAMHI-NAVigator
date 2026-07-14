@@ -1,0 +1,275 @@
+/* ===========================
+   Google Font
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f9ff;
+    color:#1f2937;
+    opacity:0;
+    animation:fadeIn .6s ease forwards;
+}
+
+/* ===========================
+   Page Transition
+=========================== */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:#fff;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .6s ease;
+    z-index:9999;
+}
+
+body.transition::after{
+    opacity:1;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    width:100%;
+    height:80px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 70px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#58c3ff,#1976d2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:26px;
+}
+
+.title h2{
+    color:#0d47a1;
+    font-size:25px;
+}
+
+.title span{
+    color:#2196f3;
+}
+
+.title p{
+    color:#777;
+    font-size:13px;
+}
+
+/* Dropdown */
+
+.nav-links{
+    list-style:none;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.drop-btn{
+    border:none;
+    background:#2196f3;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.drop-btn:hover{
+    background:#1565c0;
+}
+
+.dropdown-menu{
+    position:absolute;
+    right:0;
+    top:58px;
+    width:220px;
+    list-style:none;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:.3s;
+}
+
+.dropdown.active .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:15px;
+    text-decoration:none;
+    color:#333;
+    transition:.3s;
+}
+
+.dropdown-menu li a:hover{
+    background:#e3f2fd;
+    color:#1565c0;
+}
+
+/* ===========================
+   Section
+=========================== */
+
+.campus-section{
+    max-width:1300px;
+    margin:auto;
+    padding:70px 30px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h1{
+    font-size:50px;
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#6b7280;
+    font-size:18px;
+}
+
+.campus-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+    gap:40px;
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.campus-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.campus-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.image-box{
+    height:250px;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.campus-card:hover img{
+    transform:scale(1.08);
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card-content h2{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+.card-content p{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:25px;
+}
+
+.card-content button{
+    border:none;
+    background:#1e88ff;
+    color:#fff;
+    padding:13px 28px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.card-content button:hover{
+    background:#1565c0;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .section-title h1{
+        font-size:38px;
+    }
+
+    .campus-container{
+        grid-template-columns:1fr;
+    }
+
+}

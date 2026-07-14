@@ -1,0 +1,392 @@
+/* ==========================
+   Global
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#edf6ff;
+    overflow:hidden;
+    animation:fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:#fff;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.5s ease;
+
+    z-index:9999;
+
+}
+
+body.transition::after{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+.navbar{
+
+    height:85px;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.nav-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.logo-circle{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#58c3ff,#1e88ff);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:26px;
+
+    flex-shrink:0;
+
+}
+
+.title h2{
+
+    color:#0d47a1;
+
+    font-size:26px;
+
+}
+
+.title span{
+
+    color:#2196f3;
+
+}
+
+.title p{
+
+    color:#666;
+
+    font-size:13px;
+
+    margin-top:3px;
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* ==========================
+   Back Button
+========================== */
+
+.back-btn{
+
+    border:none;
+
+    background:#fff;
+
+    color:#1976d2;
+
+    border:2px solid #1976d2;
+
+    padding:11px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+.back-btn:hover{
+
+    background:#1976d2;
+
+    color:#fff;
+
+}
+
+/* ==========================
+   Dropdown
+========================== */
+
+.dropdown{
+
+    position:relative;
+
+}
+
+.drop-btn{
+
+    border:none;
+
+    background:#2196f3;
+
+    color:#fff;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.drop-btn:hover{
+
+    background:#1565c0;
+
+}
+
+.arrow{
+
+    margin-left:6px;
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:58px;
+
+    right:0;
+
+    width:220px;
+
+    list-style:none;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+
+    z-index: 10;
+
+}
+
+.dropdown.active .dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.dropdown-menu li a{
+
+    display:block;
+
+    padding:15px;
+
+    color:#333;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.dropdown-menu li a:hover{
+
+    background:#e3f2fd;
+
+    color:#1565c0;
+
+}
+
+/* ==========================
+   Map Page
+========================== */
+
+.map-page{
+
+    height:calc(100vh - 85px);
+
+    padding:25px;
+
+}
+
+.map-viewer{
+
+    width:100%;
+
+    height:100%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    position:relative;
+
+}
+
+.map-wrapper{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:grab;
+
+    overflow:hidden;
+
+    user-select:none;
+
+}
+
+.map-wrapper:active{
+
+    cursor:grabbing;
+
+}
+
+#campusMap{
+
+    max-width:none;
+
+    transform-origin:center center;
+
+    transition:transform .05s linear;
+
+    pointer-events:none;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:900px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:15px;
+
+        gap:15px;
+
+    }
+
+    .nav-left{
+
+        width:100%;
+
+    }
+
+    .nav-right{
+
+        width:100%;
+
+        justify-content:flex-end;
+
+    }
+
+    .title h2{
+
+        font-size:22px;
+
+    }
+
+}
