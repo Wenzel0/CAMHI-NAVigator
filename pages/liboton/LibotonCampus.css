@@ -13,6 +13,7 @@ body{
     background:#edf6ff;
     overflow:hidden;
     animation:fadeIn .5s ease;
+    zoom: 80%;
 }
 
 @keyframes fadeIn{
@@ -425,7 +426,7 @@ body.transition::after{
 
     .map-page{
 
-        height:calc(100vh - 115px);
+        height:calc(100vh - -30px);
 
         padding:15px;
 
@@ -435,7 +436,7 @@ body.transition::after{
 
     .map-page.fullscreen{
 
-        height:100vh;
+        height:130vh;
 
         padding:0;
 
@@ -537,5 +538,74 @@ body.transition::after{
         display:none;
 
     }
+
+}
+
+/* ==========================
+   Fullscreen Button
+========================== */
+
+.fullscreen-btn{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#1e88ff;
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 8px 20px rgba(30,136,255,.35);
+
+    z-index:50;
+
+    transition:.25s;
+
+}
+
+.fullscreen-btn:hover{
+
+    background:#1565c0;
+
+}
+
+@media(max-width:900px){
+
+    .fullscreen-btn{
+
+        display:flex;
+
+    }
+
+}
+.fullscreen-btn.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:scale(.8);
 
 }

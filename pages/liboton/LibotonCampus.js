@@ -5,6 +5,7 @@
 const dropdown = document.querySelector(".dropdown");
 const dropBtn = document.querySelector(".drop-btn");
 const showNavBtn = document.getElementById("showNavBtn");
+const fullscreenBtn = document.getElementById("fullscreenBtn");
 
 dropBtn.addEventListener("click",(e)=>{
 
@@ -97,7 +98,9 @@ wrapper.addEventListener("wheel",(e)=>{
 
     }
 
-    scale = Math.max(1,Math.min(scale,6));
+    const minScale = window.innerWidth <= 900 ? 0.45 : 1;
+
+scale = Math.max(minScale, Math.min(scale,6));
 
     updateMap();
 
@@ -157,6 +160,7 @@ function hideNavbar(){
         mapPage.classList.add("fullscreen");
 
         showNavBtn.classList.add("show");
+        fullscreenBtn.classList.add("hide");
 
     }
 
@@ -168,6 +172,8 @@ function showNavbar(){
     mapPage.classList.remove("fullscreen");
 
     showNavBtn.classList.remove("show");
+
+    fullscreenBtn.classList.remove("hide");
 
 }
 
@@ -182,8 +188,6 @@ showNavBtn.addEventListener("click",()=>{
 ========================== */
 
 wrapper.addEventListener("touchstart",(e)=>{
-
-    hideNavbar();
 
     if(e.touches.length != 1) return;
 
@@ -211,22 +215,9 @@ wrapper.addEventListener("touchend",()=>{
 
 });
 
-/* ==========================
-   Double Tap
-========================== */
+fullscreenBtn.addEventListener("click",()=>{
 
-let lastTap = 0;
-
-wrapper.addEventListener("touchend",()=>{
-
-    const now = Date.now();
-
-    if(now - lastTap < 300){
-
-        showNavbar();
-
-    }
-
-    lastTap = now;
+    hideNavbar();
 
 });
+
