@@ -7,6 +7,12 @@ const dropBtn = document.querySelector(".drop-btn");
 const showNavBtn = document.getElementById("showNavBtn");
 const fullscreenBtn = document.getElementById("fullscreenBtn");
 
+const zoomControls = document.getElementById("zoomControls");
+const zoomInBtn = document.getElementById("zoomInBtn");
+const zoomOutBtn = document.getElementById("zoomOutBtn");
+
+const mapInfo = document.getElementById("mapInfo");
+
 dropBtn.addEventListener("click",(e)=>{
 
     e.stopPropagation();
@@ -68,6 +74,9 @@ document.querySelectorAll(".dropdown-menu a")[1].onclick=(e)=>{
 const map = document.getElementById("campusMap");
 const wrapper = document.getElementById("mapWrapper");
 
+let initialPinchDistance = 0;
+let initialScale = 1;
+
 let scale = 1;
 let x = 0;
 let y = 0;
@@ -76,6 +85,15 @@ let dragging = false;
 
 let startX = 0;
 let startY = 0;
+
+function getDistance(touch1, touch2){
+
+    const dx = touch2.clientX - touch1.clientX;
+    const dy = touch2.clientY - touch1.clientY;
+
+    return Math.sqrt(dx * dx + dy * dy);
+
+}
 
 function updateMap(){
 
@@ -161,6 +179,8 @@ function hideNavbar(){
 
         showNavBtn.classList.add("show");
         fullscreenBtn.classList.add("hide");
+        zoomControls.classList.add("show");
+        mapInfo.classList.add("show");
 
     }
 
@@ -174,6 +194,8 @@ function showNavbar(){
     showNavBtn.classList.remove("show");
 
     fullscreenBtn.classList.remove("hide");
+    zoomControls.classList.remove("show");
+    mapInfo.classList.remove("show");
 
 }
 
@@ -189,23 +211,70 @@ showNavBtn.addEventListener("click",()=>{
 
 wrapper.addEventListener("touchstart",(e)=>{
 
-    if(e.touches.length != 1) return;
+    e.preventDefault();
 
-    dragging = true;
+    if(e.touches.length === 1){
 
-    startX = e.touches[0].clientX - x;
-    startY = e.touches[0].clientY - y;
+        dragging = true;
+
+        startX = e.touches[0].clientX - x;
+        startY = e.touches[0].clientY - y;
+
+    }
+
+    else if(e.touches.length === 2){
+
+        dragging = false;
+
+        initialPinchDistance = getDistance(
+            e.touches[0],
+            e.touches[1]
+        );
+
+        initialScale = scale;
+
+    }
 
 },{passive:false});
 
 wrapper.addEventListener("touchmove",(e)=>{
 
-    if(!dragging) return;
+    e.preventDefault();
 
-    x = e.touches[0].clientX - startX;
-    y = e.touches[0].clientY - startY;
+    /* One Finger = Drag */
 
-    updateMap();
+    if(e.touches.length === 1 && dragging){
+
+        x = e.touches[0].clientX - startX;
+        y = e.touches[0].clientY - startY;
+
+        updateMap();
+
+    }
+
+    /* Two Fingers = Pinch Zoom */
+
+    else if(e.touches.length === 2){
+
+        const currentDistance = getDistance(
+            e.touches[0],
+            e.touches[1]
+        );
+
+        scale = initialScale *
+            (currentDistance / initialPinchDistance);
+
+        const minScale =
+            window.innerWidth <= 900 ? 0.45 : 1;
+
+        scale = Math.max(
+            minScale,
+            Math.min(scale,6)
+        );
+
+        updateMap();
+
+    }
 
 },{passive:false});
 
@@ -221,3 +290,38 @@ fullscreenBtn.addEventListener("click",()=>{
 
 });
 
+/* ==========================
+   Zoom Buttons
+========================== */
+
+zoomInBtn.addEventListener("click",()=>{
+
+    scale += 0.25;
+
+    scale = Math.min(scale,6);
+
+    updateMap();
+
+});
+
+zoomOutBtn.addEventListener("click",()=>{
+
+    const minScale =
+        window.innerWidth <= 900 ? 0.45 : 1;
+
+    scale -= 0.25;
+
+    scale = Math.max(minScale,scale);
+
+    updateMap();
+
+});
+
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+
+    document.body.classList.add("dark-mode");
+
+}

@@ -1,4 +1,17 @@
 /* ---------- Page Fade ---------- */
+:root{
+
+    --page-transition:#ffffff;
+
+}
+
+body.dark-mode{
+
+    --page-transition:#0f172a;
+
+}
+
+/* ---------- Page Fade ---------- */
 
 body{
     opacity:0;
@@ -25,12 +38,13 @@ body.fade-out{
 
     from{
         opacity:1;
-        background:white;
+        background:var(--page-transition);
     }
 
     to{
         opacity:0;
-        background:white;
+        background:var(--page-transition);
     }
 
 }
+

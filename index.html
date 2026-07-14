@@ -8,6 +8,8 @@
     <!--Style-->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Transition.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="darkmode.css">
 
     <!--favicon-->
     <link rel="icon" type="image/png" href="Assets/Icons/favicon.png">
@@ -19,18 +21,29 @@
     <!-- Navigation -->
     <nav class="navbar">
 
-        <div class="logo">
+<div class="logo">
 
-            <div class="logo-circle">
-                📍
-            </div>
+    <button id="menuBtn" class="menu-btn">
+        ☰
+    </button>
 
-            <div class="title">
-                <h2>CSNHS <span>NAVigator</span></h2>
-                <p>Campus Navigation System</p>
-            </div>
+    <a href="index.html" class="logo-link">
+
+        <div class="logo-circle">
+            📍
+        </div>
+
+        <div class="title">
+
+            <h2>CSNHS <span>NAVigator</span></h2>
+
+            <p>Campus Navigation System</p>
 
         </div>
+
+    </a>
+
+</div>
 
         <ul class="nav-links">
 
@@ -53,6 +66,73 @@
         </ul>
 
     </nav>
+    <!-- ===========================================
+                Sidebar
+=========================================== -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+
+        <h2>CSNHS NAVigator</h2>
+
+        <p>Campus Navigation System</p>
+
+    </div>
+
+    <div class="sidebar-section">
+
+        <h3>Other Pages</h3>
+
+        <ul>
+
+            <li>
+
+    <a href="#" class="sidebar-link">
+
+        Credits
+
+    </a>
+
+</li>
+
+        </ul>
+
+    </div>
+
+    <div class="sidebar-section">
+
+        <h3>Settings</h3>
+
+        <ul>
+
+<li class="dark-mode-setting">
+
+    <span>🌙 Dark Mode</span>
+
+    <label class="switch">
+
+        <input type="checkbox" id="darkModeToggle">
+
+        <span class="slider"></span>
+
+    </label>
+
+</li>
+
+        </ul>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+        Version 1.0
+
+    </div>
+
+</aside>
 
     <!-- Hero -->
 
@@ -74,6 +154,8 @@
     </section>
 
 <script src="script.js"></script>
+<script src="sidebar.js"></script>
+<script src="darkmode.css"></script>
 
 </body>
 </html>

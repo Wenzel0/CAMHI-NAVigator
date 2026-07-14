@@ -1,0 +1,81 @@
+/*==================================================
+                DARK MODE SWITCH
+==================================================*/
+
+.dark-mode-setting{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:54px;
+
+    height:30px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    cursor:pointer;
+
+    background:#cfd8dc;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    left:4px;
+
+    bottom:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:#1e88ff;
+
+}
+
+.switch input:checked + .slider::before{
+
+    transform:translateX(24px);
+
+}

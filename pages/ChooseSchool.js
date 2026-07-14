@@ -63,3 +63,11 @@ menuLinks[1].addEventListener("click",(e)=>{
     e.preventDefault();
     goToPage("liboton/LibotonCampus.html");
 });
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+
+    document.body.classList.add("dark-mode");
+
+}
