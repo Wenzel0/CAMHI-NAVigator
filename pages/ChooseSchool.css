@@ -24,8 +24,6 @@ body{
     zoom: 80%;
     min-height:100vh;
     width:100%;
-
-    overflow:hidden;
     animation:fadeIn .6s ease forwards;
 }
 
