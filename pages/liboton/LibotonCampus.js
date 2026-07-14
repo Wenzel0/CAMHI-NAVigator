@@ -4,6 +4,7 @@
 
 const dropdown = document.querySelector(".dropdown");
 const dropBtn = document.querySelector(".drop-btn");
+const showNavBtn = document.getElementById("showNavBtn");
 
 dropBtn.addEventListener("click",(e)=>{
 
@@ -138,5 +139,94 @@ wrapper.addEventListener("dblclick",()=>{
     y = 0;
 
     updateMap();
+
+});
+
+/* ==========================
+   Mobile Fullscreen
+========================== */
+
+const navbar = document.querySelector(".navbar");
+const mapPage = document.querySelector(".map-page");
+
+function hideNavbar(){
+
+    if(window.innerWidth <= 900){
+
+        navbar.classList.add("hidden");
+        mapPage.classList.add("fullscreen");
+
+        showNavBtn.classList.add("show");
+
+    }
+
+}
+
+function showNavbar(){
+
+    navbar.classList.remove("hidden");
+    mapPage.classList.remove("fullscreen");
+
+    showNavBtn.classList.remove("show");
+
+}
+
+showNavBtn.addEventListener("click",()=>{
+
+    showNavbar();
+
+});
+
+/* ==========================
+   Touch Drag
+========================== */
+
+wrapper.addEventListener("touchstart",(e)=>{
+
+    hideNavbar();
+
+    if(e.touches.length != 1) return;
+
+    dragging = true;
+
+    startX = e.touches[0].clientX - x;
+    startY = e.touches[0].clientY - y;
+
+},{passive:false});
+
+wrapper.addEventListener("touchmove",(e)=>{
+
+    if(!dragging) return;
+
+    x = e.touches[0].clientX - startX;
+    y = e.touches[0].clientY - startY;
+
+    updateMap();
+
+},{passive:false});
+
+wrapper.addEventListener("touchend",()=>{
+
+    dragging = false;
+
+});
+
+/* ==========================
+   Double Tap
+========================== */
+
+let lastTap = 0;
+
+wrapper.addEventListener("touchend",()=>{
+
+    const now = Date.now();
+
+    if(now - lastTap < 300){
+
+        showNavbar();
+
+    }
+
+    lastTap = now;
 
 });
