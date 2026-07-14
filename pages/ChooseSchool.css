@@ -14,9 +14,18 @@ html{
 }
 
 body{
-    background:#f4f9ff;
-    color:#1f2937;
-    opacity:0;
+
+    background-image:url("../Assets/Images/bg/main.png");
+    background-color: white;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    background-attachment:fixed;
+    zoom: 80%;
+    min-height:100vh;
+    width:100%;
+
+    overflow:hidden;
     animation:fadeIn .6s ease forwards;
 }
 
