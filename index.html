@@ -10,14 +10,28 @@
     <link rel="stylesheet" href="Transition.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="loadscreen.css">
 
     <!--favicon-->
     <link rel="icon" type="image/png" href="Assets/Icons/favicon.png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
 
+
+
+<body>
+<!-- ==========================================
+            Loading Screen
+========================================== -->
+
+<div id="loadingScreen" class="loading-screen">
+
+    <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif" alt="Loading">
+
+    <h2 id="loadingText">Loading.</h2>
+
+</div>
     <!-- Navigation -->
     <nav class="navbar">
 
@@ -128,7 +142,7 @@
 
     <div class="sidebar-footer">
 
-        Version 1.0
+        Version 1.5
 
     </div>
 
@@ -155,7 +169,7 @@
 
 <script src="script.js"></script>
 <script src="sidebar.js"></script>
-<script src="darkmode.css"></script>
+<script src="load.js"></script>
 
 </body>
 </html>

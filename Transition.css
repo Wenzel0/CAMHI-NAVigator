@@ -18,9 +18,7 @@ body{
     animation:fadeIn .6s ease forwards;
 }
 
-body.fade-out{
-    animation:fadeOut .5s ease forwards;
-}
+
 
 @keyframes fadeIn{
 

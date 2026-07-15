@@ -18,13 +18,20 @@ document.addEventListener("click",()=>{
    Page Transition
 =========================== */
 
+const loadingScreen =
+document.getElementById("loadingScreen");
+
 function goToPage(page){
 
     document.body.classList.add("transition");
 
+    loadingScreen.classList.add("show");
+
     setTimeout(()=>{
+
         window.location.href = page;
-    },600);
+
+    },500);
 
 }
 
@@ -71,3 +78,31 @@ if(savedTheme === "dark"){
     document.body.classList.add("dark-mode");
 
 }
+
+
+const loadingText =
+document.getElementById("loadingText");
+
+let dots = 1;
+
+setInterval(()=>{
+
+    loadingText.textContent =
+    "Loading" + ".".repeat(dots);
+
+    dots++;
+
+    if(dots > 3){
+
+        dots = 1;
+
+    }
+
+},400); 
+
+
+window.addEventListener("load",()=>{
+
+    loadingScreen.classList.remove("show");
+
+});
