@@ -1,6 +1,18 @@
 /*==================================================
                 DARK MODE SWITCH
 ==================================================*/
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after{
+
+    transition:
+        background-color .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
 
 .dark-mode-setting{
 

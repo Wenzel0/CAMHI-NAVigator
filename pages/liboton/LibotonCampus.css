@@ -93,7 +93,7 @@ body.transition::after{
 
     box-shadow:0 4px 15px rgba(0,0,0,.08);
     position: relative;
-    z-index: 1000;
+    z-index: 1002;
 
 }
 
@@ -793,7 +793,7 @@ body.transition::after{
 
     -webkit-backdrop-filter:blur(16px);
 
-    color:#373855;
+    color:#383c68;
 
     transform-origin:top right;
 
@@ -924,4 +924,7 @@ body.dark-mode .zoom-controls button{
 }
 body.dark-mode .map-viewer{
     background:#142230;
+}
+body.dark-mode .map-info p, h2{
+    color: white;
 }

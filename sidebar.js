@@ -87,6 +87,8 @@ if(savedTheme === "dark"){
 
 darkModeToggle.addEventListener("change",()=>{
 
+    document.documentElement.classList.add("theme-transition");
+
     if(darkModeToggle.checked){
 
         document.body.classList.add("dark-mode");
@@ -100,5 +102,11 @@ darkModeToggle.addEventListener("change",()=>{
         localStorage.setItem("theme","light");
 
     }
+
+    setTimeout(()=>{
+
+        document.documentElement.classList.remove("theme-transition");
+
+    },350);
 
 });

@@ -4,7 +4,17 @@
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
 }
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after{
 
+    transition:
+        background-color 1s ease,
+        color 1.5s ease,
+        border-color 1s ease,
+        box-shadow 1s ease;
+
+}
 body{
 
     background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/CSNHS_Gabaldon_RWDA.jpg/1920px-CSNHS_Gabaldon_RWDA.jpg");
