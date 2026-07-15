@@ -92,9 +92,8 @@ body.transition::after{
     padding:0 40px;
 
     box-shadow:0 4px 15px rgba(0,0,0,.08);
-    position: relative;
+        position: relative;
     z-index: 1000;
-
 }
 
 .nav-left{
@@ -141,7 +140,7 @@ body.transition::after{
 
 .title span{
 
-    color:#21dbf3;
+    color:#2196f3;
 
 }
 
@@ -269,7 +268,7 @@ body.transition::after{
 
     transition:.3s;
 
-    z-index: 10;
+    z-index: 900000;
 
 }
 
@@ -280,6 +279,7 @@ body.transition::after{
     visibility:visible;
 
     transform:translateY(0);
+
 
 }
 
@@ -722,118 +722,41 @@ body.transition::after{
    Fullscreen Map Information
 ========================== */
 
-/* ==========================
-      Floating Info Button
-========================== */
-
-.info-btn{
+.map-info{
 
     position:absolute;
 
     top:20px;
 
-    right:20px;
+    left:50%;
 
-    width:52px;
+    transform:translateX(-50%);
 
-    height:52px;
+    width:min(90%,700px);
 
-    border:none;
-
-    border-radius:50%;
-
-    background:linear-gradient(135deg,#1e88ff,#42a5f5);
-
-    color:#fff;
-
-    font-size:26px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-    z-index:1000;
-
-    transition:.3s;
-
-}
-
-.info-btn:hover{
-
-    transform:scale(1.08);
-
-}
-
-.info-btn:active{
-
-    transform:scale(.95);
-
-}
-
-
-.map-info{
-
-    position:absolute;
-
-    top:85px;
-
-    right:20px;
-
-    width:min(360px,90vw);
-
-    padding:18px;
+    padding:18px 22px;
 
     border-radius:18px;
 
-    background:rgba(124, 142, 221, 0.267);
+    background:rgba(255,255,255,.18);
 
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(14px);
 
-    -webkit-backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(1px);
 
-    color:#373855;
+    border:1px solid rgba(255,255,255,.25);
 
-    transform-origin:top right;
+    color:#919191;
 
-    transform:scale(.8) translateY(-20px);
+
 
     opacity:0;
 
     visibility:hidden;
 
-    transition:
+    transition:.35s ease;
 
-        opacity .35s,
-
-        transform .35s,
-
-        visibility .35s;
-
-    z-index:999;
-
-}
-
-.map-info.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:scale(1) translateY(0);
-
-}
-
-.map-info h2{
-
-    margin-bottom:10px;
-
-}
-
-.map-info p{
-
-    line-height:1.6;
+    z-index:998;
 
 }
 

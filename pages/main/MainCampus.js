@@ -13,8 +13,6 @@ const zoomOutBtn = document.getElementById("zoomOutBtn");
 
 const mapInfo = document.getElementById("mapInfo");
 
-const infoBtn = document.getElementById("infoBtn");
-
 dropBtn.addEventListener("click",(e)=>{
 
     e.stopPropagation();
@@ -55,15 +53,15 @@ document.getElementById("backBtn").onclick=()=>{
 
 };
 
-document.querySelectorAll(".dropdown-menu a")[0].onclick=(e)=>{
+document.querySelectorAll(".dropdown-menu a")[1].onclick=(e)=>{
 
     e.preventDefault();
 
-    changePage("../main/MainCampus.html");
+    changePage("../liboton/LibotonCampus.html");
 
 };
 
-document.querySelectorAll(".dropdown-menu a")[1].onclick=(e)=>{
+document.querySelectorAll(".dropdown-menu a")[0].onclick=(e)=>{
 
     e.preventDefault();
 
@@ -182,6 +180,7 @@ function hideNavbar(){
         showNavBtn.classList.add("show");
         fullscreenBtn.classList.add("hide");
         zoomControls.classList.add("show");
+        mapInfo.classList.add("show");
 
     }
 
@@ -196,6 +195,7 @@ function showNavbar(){
 
     fullscreenBtn.classList.remove("hide");
     zoomControls.classList.remove("show");
+    mapInfo.classList.remove("show");
 
 }
 
@@ -325,13 +325,3 @@ if(savedTheme === "dark"){
     document.body.classList.add("dark-mode");
 
 }
-
-let infoVisible = false;
-
-infoBtn.addEventListener("click",()=>{
-
-    infoVisible = !infoVisible;
-
-    mapInfo.classList.toggle("show",infoVisible);
-
-});     
