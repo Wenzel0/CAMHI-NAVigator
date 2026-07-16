@@ -32,6 +32,78 @@
     <h2 id="loadingText">Loading.</h2>
 
 </div>
+
+<!-- ==========================================
+            Offline Popup
+========================================== -->
+
+<div id="offlinePopup" class="offline-popup">
+
+    <div class="offline-card">
+
+        <img src="Assets/load/noWifi.png" alt="Offline">
+
+        <h2>Connection Lost</h2>
+
+        <p>
+
+            Your internet connection appears to be unavailable.
+
+            You can continue browsing this page offline
+            or reconnect and try again.
+
+        </p>
+
+        <div class="offline-buttons">
+
+            <button id="offlineBtn">
+
+                Continue Offline
+
+            </button>
+
+            <button id="retryBtn">
+
+                Reconnect
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+            Network Notification
+========================================== -->
+
+<div id="networkToast" class="network-toast">
+
+<img
+    id="networkImage"
+    class="network-image"
+    src="Assets/load/connected.png"
+    alt="Connected">
+
+    <div class="network-content">
+
+        <h2 id="networkTitle">
+
+            Connected!
+
+        </h2>
+
+        <p id="networkMessage">
+
+            Your internet connection has been restored.
+
+        </p>
+
+    </div>
+
+</div>
     <!-- Navigation -->
     <nav class="navbar">
 
@@ -107,6 +179,15 @@
     <a href="#" class="sidebar-link">
 
         Credits
+
+    </a>
+
+</li>
+<li>
+
+    <a href="#" class="sidebar-link" id="adminAccessBtn">
+
+        Admin Access
 
     </a>
 

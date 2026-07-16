@@ -505,3 +505,284 @@ body.dark-mode .btn:hover{
     transform:scale(.98);
 
 }
+
+
+
+
+/*==================================================
+                OFFLINE POPUP
+==================================================*/
+
+.offline-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    z-index:20000;
+
+}
+
+.offline-popup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.offline-card{
+
+    width:min(420px,90vw);
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    transform:translateY(30px);
+
+    transition:.35s ease;
+
+}
+
+.offline-popup.show .offline-card{
+
+    transform:translateY(0);
+
+}
+
+.offline-card img{
+
+    width:120px;
+
+    margin-bottom:20px;
+
+}
+
+.offline-card h2{
+
+    color:#0d47a1;
+
+    margin-bottom:15px;
+
+}
+
+.offline-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+.offline-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.offline-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#offlineBtn{
+
+    background:#e5e7eb;
+
+}
+
+#offlineBtn:hover{
+
+    background:#d1d5db;
+
+}
+
+#retryBtn{
+
+    background:#1e88ff;
+
+    color:white;
+
+}
+
+#retryBtn:hover{
+
+    background:#1565c0;
+
+}
+
+
+
+/*==================================================
+            NETWORK TOAST
+==================================================*/
+
+.network-toast{
+
+    position:fixed;
+
+    top:150px;
+
+    right:-320px;
+
+    width:280px;
+
+    padding:12px 14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:14px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    transition:right .45s ease, opacity .3s ease;
+
+    z-index:25000;
+
+    user-select:none;
+
+    touch-action:pan-y;
+
+}
+
+.network-toast.show{
+
+    right:15px;
+
+}
+
+body.dark-mode .network-toast{
+
+    background:rgba(20,32,55,.82);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.network-image{
+
+    width:48px;
+
+    height:48px;
+
+    object-fit:contain;
+
+    flex-shrink:0;
+
+}s
+
+.network-content{
+
+    flex:1;
+
+}
+
+.network-content h2{
+
+    font-size:17px;
+
+    margin-bottom:2px;
+
+    color:#1976d2;
+
+}
+
+.network-content p{
+
+    font-size:13px;
+
+    color:#666;
+
+    line-height:1.35;
+
+}
+
+/* Dark Mode */
+
+body.dark-mode .network-toast{
+
+    background:#1b263b;
+
+}
+
+body.dark-mode .network-content h2{
+
+    color:#64b5ff;
+
+}
+
+body.dark-mode .network-content p{
+
+    color:#d7d7d7;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.network-toast{
+
+    width:90%;
+
+    right:-110%;
+
+}
+
+.network-toast.show{
+
+    right:5%;
+
+}
+
+}

@@ -106,3 +106,58 @@ window.addEventListener("load",()=>{
     loadingScreen.classList.remove("show");
 
 });
+
+
+
+
+/* ==========================================
+            Offline Detection
+========================================== */
+
+const offlinePopup =
+document.getElementById("offlinePopup");
+
+const offlineBtn =
+document.getElementById("offlineBtn");
+
+const retryBtn =
+document.getElementById("retryBtn");
+
+/* Show popup */
+
+window.addEventListener("offline",()=>{
+
+    offlinePopup.classList.add("show");
+
+});
+
+/* Hide if connection returns */
+
+window.addEventListener("online",()=>{
+
+    offlinePopup.classList.remove("show");
+
+});
+
+/* Continue Offline */
+
+offlineBtn.addEventListener("click",()=>{
+
+    offlinePopup.classList.remove("show");
+
+});
+
+/* Retry */
+
+retryBtn.addEventListener("click",()=>{
+
+    location.reload();
+
+}); 
+
+
+if(!navigator.onLine){
+
+    offlinePopup.classList.add("show");
+
+}

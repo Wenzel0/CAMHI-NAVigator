@@ -246,3 +246,26 @@
     }
 
 }
+
+
+/*==================================================
+                ADMIN ACCESS
+==================================================*/
+
+#adminAccessBtn{
+
+    transition:.3s;
+
+}
+
+#adminAccessBtn.admin-active{
+
+    color:#1e88ff;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 8px #1e88ff,
+        0 0 18px #42a5f5;
+
+}

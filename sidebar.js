@@ -110,3 +110,74 @@ darkModeToggle.addEventListener("change",()=>{
     },350);
 
 });
+
+
+
+/*==================================================
+            HIDDEN ADMIN ACCESS
+==================================================*/
+
+const adminAccessBtn =
+document.getElementById("adminAccessBtn");
+
+let adminMode = false;
+
+let typedText = "";
+
+adminAccessBtn.addEventListener("click",(e)=>{
+
+    e.preventDefault();
+
+    adminMode = !adminMode;
+
+    typedText = "";
+
+    adminAccessBtn.classList.toggle(
+        "admin-active",
+        adminMode
+    );
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(!adminMode) return;
+
+    if(e.key === "Enter"){
+
+        if(typedText === "Admin"){
+
+            document.body.classList.add("transition");
+
+            loadingScreen.classList.add("show");
+
+            setTimeout(()=>{
+
+                window.location.href =
+                "https://wenzel0.github.io/NAVigator.ADMIN/";
+
+            },500);
+
+        }
+
+        typedText = "";
+
+        return;
+
+    }
+
+    if(e.key === "Backspace"){
+
+        typedText = typedText.slice(0,-1);
+
+        return;
+
+    }
+
+    if(e.key.length === 1){
+
+        typedText += e.key;
+
+    }
+
+});s
