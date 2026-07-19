@@ -14,48 +14,7 @@ const zoomOutBtn = document.getElementById("zoomOutBtn");
 const mapInfo = document.getElementById("mapInfo");
 
 const infoBtn = document.getElementById("infoBtn");
-/* ==========================
-   Loading Screen
-========================== */
 
-const loadingScreen = document.getElementById("loadingScreen");
-const loadingText = document.getElementById("loadingText");
-
-let dots = 1;
-
-setInterval(()=>{
-
-    loadingText.textContent =
-    "Loading" + ".".repeat(dots);
-
-    dots++;
-
-    if(dots > 3){
-
-        dots = 1;
-
-    }
-
-},400);
-
-window.addEventListener("load",()=>{
-
-    loadingScreen.classList.remove("show");
-
-});
-dropBtn.addEventListener("click",(e)=>{
-
-    e.stopPropagation();
-
-    dropdown.classList.toggle("active");
-
-});
-
-document.addEventListener("click",()=>{
-
-    dropdown.classList.remove("active");
-
-});
 
 /* ==========================
    Page Transition
@@ -64,8 +23,6 @@ document.addEventListener("click",()=>{
 function changePage(page){
 
     document.body.classList.add("transition");
-
-    loadingScreen.classList.add("show");
 
     setTimeout(()=>{
 

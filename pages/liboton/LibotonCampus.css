@@ -310,22 +310,10 @@ body.transition::after{
 ========================== */
 
 .map-page{
-    height:calc(100vh - 85px);
+
+    height:calc(100vh - -150px);
+
     padding:25px;
-}
-
-@media(max-width:900px){
-
-    .map-page{
-        height:100vh;
-        padding:15px;
-        transition:all .35s ease;
-    }
-
-    .map-page.fullscreen{
-        height:100vh;
-        padding:0;
-    }
 
 }
 
@@ -513,37 +501,47 @@ body.transition::after{
 ========================== */
 
 .show-nav-btn{
-    position: fixed;
 
-    right: 20px;
+    position:fixed;
 
-    bottom: max(20px, env(safe-area-inset-bottom));
+    bottom:25px;
 
-    width: 60px;
-    height: 60px;
+    right:20px;
 
-    border: none;
-    border-radius: 50%;
+    width:60px;
 
-    background: #1e88ff;
-    color: white;
+    height:60px;
 
-    font-size: 28px;
+    border:none;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius:50%;
 
-    cursor: pointer;
+    background:#1e88ff;
 
-    opacity: 0;
-    visibility: hidden;
+    color:#fff;
 
-    transform: scale(.8);
+    font-size:28px;
 
-    transition: .3s;
+    cursor:pointer;
 
-    z-index: 99999;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(30,136,255,.4);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:scale(.8);
+
+    transition:.3s;
+
+    z-index:999;
+
 }
 
 /* Appears in fullscreen */
