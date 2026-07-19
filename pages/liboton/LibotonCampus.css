@@ -310,10 +310,22 @@ body.transition::after{
 ========================== */
 
 .map-page{
-
-    height:calc(100vh - -150px);
-
+    height:calc(100vh - 85px);
     padding:25px;
+}
+
+@media(max-width:900px){
+
+    .map-page{
+        height:100vh;
+        padding:15px;
+        transition:all .35s ease;
+    }
+
+    .map-page.fullscreen{
+        height:100vh;
+        padding:0;
+    }
 
 }
 
