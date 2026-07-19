@@ -501,47 +501,37 @@ body.transition::after{
 ========================== */
 
 .show-nav-btn{
+    position: fixed;
 
-    position:fixed;
+    right: 20px;
 
-    bottom:25px;
+    bottom: max(20px, env(safe-area-inset-bottom));
 
-    right:20px;
+    width: 60px;
+    height: 60px;
 
-    width:60px;
+    border: none;
+    border-radius: 50%;
 
-    height:60px;
+    background: #1e88ff;
+    color: white;
 
-    border:none;
+    font-size: 28px;
 
-    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background:#1e88ff;
+    cursor: pointer;
 
-    color:#fff;
+    opacity: 0;
+    visibility: hidden;
 
-    font-size:28px;
+    transform: scale(.8);
 
-    cursor:pointer;
+    transition: .3s;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:0 10px 25px rgba(30,136,255,.4);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:scale(.8);
-
-    transition:.3s;
-
-    z-index:999;
-
+    z-index: 99999;
 }
 
 /* Appears in fullscreen */
